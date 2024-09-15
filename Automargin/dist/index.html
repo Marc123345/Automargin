@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMargin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with scroll functionality -->
+        <aside class="sidebar">
+            <h2>Filters</h2>
+
+            <!-- Make & Model Filter -->
+            <div class="filter">
+                <label for="make-model">Make</label>
+                <select id="make-model">
+                    <option value="any">Any make</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                </select>
+
+                <label for="model">Model</label>
+                <select id="model">
+                    <option value="any">Any model</option>
+                    <option value="Camry">Camry</option>
+                    <option value="Civic">Civic</option>
+                    <option value="F-150">F-150</option>
+                    <option value="Silverado">Silverado</option>
+                    <option value="3 Series">3 Series</option>
+                    <option value="C-Class">C-Class</option>
+                </select>
+            </div>
+
+            <!-- Location Filter -->
+            <div class="filter">
+                <label for="location">Location</label>
+                <select id="location">
+                    <option value="any">Choose location</option>
+                    <option value="California">California</option>
+                    <option value="Texas">Texas</option>
+                    <option value="New York">New York</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Illinois">Illinois</option>
+                </select>
+            </div>
+
+            <!-- Body Type Filter -->
+            <div class="filter">
+                <label for="body-type">Body Type</label>
+                <div>
+                    <input type="checkbox" id="sedan" name="body-type" value="sedan">
+                    <label for="sedan">Sedan</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="suv" name="body-type" value="suv">
+                    <label for="suv">SUV</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wagon" name="body-type" value="wagon">
+                    <label for="wagon">Wagon</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="crossover" name="body-type" value="crossover">
+                    <label for="crossover">Crossover</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="coupe" name="body-type" value="coupe">
+                    <label for="coupe">Coupe</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pickup" name="body-type" value="pickup">
+                    <label for="pickup">Pickup</label>
+                </div>
+            </div>
+
+            <!-- Year Filter -->
+            <div class="filter">
+                <label for="year">Year</label>
+                <input type="range" id="year" min="2000" max="2024" value="2019">
+                <p>Selected Year: <span id="year-value">2019</span></p>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter">
+                <label for="price">Price</label>
+                <input type="range" id="price" min="10000" max="50000" value="30000">
+                <p>Price: $<span id="price-value">30000</span></p>
+            </div>
+
+            <!-- Drive Type Filter -->
+            <div class="filter">
+                <label for="drive-type">Drive Type</label>
+                <div>
+                    <input type="checkbox" id="awd" name="drive-type" value="AWD">
+                    <label for="awd">AWD/4WD</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="fwd" name="drive-type" value="FWD">
+                    <label for="fwd">Front Wheel Drive</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="rwd" name="drive-type" value="RWD">
+                    <label for="rwd">Rear Wheel Drive</label>
+                </div>
+            </div>
+
+            <!-- Fuel Type Filter -->
+            <div class="filter">
+                <label for="fuel-type">Fuel Type</label>
+                <div>
+                    <input type="checkbox" id="diesel" name="fuel-type" value="diesel">
+                    <label for="diesel">Diesel</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="electric" name="fuel-type" value="electric">
+                    <label for="electric">Electric</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gasoline" name="fuel-type" value="gasoline">
+                    <label for="gasoline">Gasoline</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="hybrid" name="fuel-type" value="hybrid">
+                    <label for="hybrid">Hybrid</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="hydrogen" name="fuel-type" value="hydrogen">
+                    <label for="hydrogen">Hydrogen</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="plugin-hybrid" name="fuel-type" value="plugin-hybrid">
+                    <label for="plugin-hybrid">Plug-in Hybrid</label>
+                </div>
+            </div>
+
+            <!-- Transmission Filter -->
+            <div class="filter">
+                <label for="transmission">Transmission</label>
+                <div>
+                    <input type="checkbox" id="automatic" name="transmission" value="automatic">
+                    <label for="automatic">Automatic</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="manual5" name="transmission" value="manual5">
+                    <label for="manual5">Manual 5-Speed</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="manual6" name="transmission" value="manual6">
+                    <label for="manual6">Manual 6-Speed</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="manual7" name="transmission" value="manual7">
+                    <label for="manual7">Manual 7-Speed</label>
+                </div>
+            </div>
+
+            <!-- Color Filter -->
+            <div class="filter">
+                <label for="color">Color</label>
+                <div>
+                    <input type="checkbox" id="black" name="color" value="black">
+                    <label for="black">Black</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="blue" name="color" value="blue">
+                    <label for="blue">Blue</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="white" name="color" value="white">
+                    <label for="white">White</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="red" name="color" value="red">
+                    <label for="red">Red</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gray" name="color" value="gray">
+                    <label for="gray">Gray</label>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main content -->
+        <main class="dashboard">
+            <h2>Car Model Profitability Insights</h2>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
